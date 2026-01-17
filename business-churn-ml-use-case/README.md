@@ -63,11 +63,3 @@ Visualizations include:
 - **Confusion Matrix**
 
 **Insights:** The Logistic Regression model captures nearly all cancellations, allowing hotel staff to proactively target high-risk customers.
-
----
-
-## How to Run
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/hotel_booking_cancellation.git
