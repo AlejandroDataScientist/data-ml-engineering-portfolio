@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AyA Eventos</title>
+    <style>
+
+        .top-nav {
+            position: absolute;
+            top: 21px;
+            right: 20px;
+        }
+
+        .registro-btn {
+            background-color: #ff7e5f;  /* un color alegre como en la app Formulario */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .registro-btn:hover {
+            background-color: #eb5e3f;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #fef3f3, #fdf6e3);
+            color: #333;
+        }
+
+        header {
+            background-color: #f76c6c;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 10%;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+            background-color: #fff4f4;
+        }
+
+        .section img {
+            width: 300px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        .section-text {
+            max-width: 500px;
+        }
+
+        .section-text h2 {
+            color: #f76c6c;
+            margin-bottom: 15px;
+        }
+
+        .section-text p {
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #f76c6c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .carousel-container {
+            margin: 60px 0;
+            background-color: #fff7f7;
+            padding: 40px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #f76c6c;
+            margin-bottom: 20px;
+        }
+
+        .carousel-track {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .carousel-slide {
+            display: inline-block;
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .carousel-slide img {
+            height: 150px;
+            margin: 0 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-slide img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+        transform: translateX(-50%);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .section img {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+<header>
+    <div class="top-nav" style="text-align: right;">
+        <a href="{% url 'usuarios:login' %}" class="registro-btn">Iniciar sesión</a>
+        <br>
+        <small style="color: white; display: inline-block; margin-top: 7px;">
+            ¿No tienes cuenta?
+            <a href="{% url 'usuarios:registro' %}" style="color: #ffe0e0; text-decoration: underline;">Regístrate</a>
+        </small>
+    </div>
+    <h1>Grupo A&A - Organización de eventos</h1>
+    <p>Conectamos ciencia, tecnología y diseño</p>
+</header>
+
+</header>
+
+<section class="carousel-container">
+    <h2 class="carousel-title">Se parte de un momento extraordinario</h2>
+    <div class="carousel-track">
+        <div class="carousel-slide">
+            <img src="{% static 'img/evento1.jpg' %}" alt="Evento 1">
+            <img src="{% static 'img/evento2.jpg' %}" alt="Evento 2">
+            <img src="{% static 'img/evento3.jpg' %}" alt="Evento 3">
+            <img src="{% static 'img/evento4.jpg' %}" alt="Evento 4">
+            <img src="{% static 'img/evento1.jpg' %}" alt="Evento 1">
+            <img src="{% static 'img/evento2.jpg' %}" alt="Evento 2">
+            <img src="{% static 'img/evento2.jpg' %}" alt="Evento 3">
+            <img src="{% static 'img/evento3.jpg' %}" alt="Evento 4">
+        </div>
+    </div>
+</section>
+
+
+<!-- 2. Bazar: invitación a emprendedores -->
+<section class="section">
+    <div class="section-text">
+        <h2>Bazares, Ferias y Eventos para Emprendedores</h2>
+        <p>Participa en nuestros bazares mensuales. Promueve tu marca, conoce nuevos clientes y forma parte de una comunidad que apoya el emprendimiento local.</p>
+    </div>
+    <a href="{% url 'eventos_home' %}">
+        <img src="{% static 'img/bazar.jpg' %}" alt="Bazar para Emprendedores">
+    </a>
+</section>
+
+<!-- 3. Marketing -->
+<section class="section">
+    <div class="section-text">
+        <h2>Marketing y Consolidación de Marca</h2>
+        <p>Te guiamos en branding, estrategias de marketing digital y posicionamiento para ayudarte a hacer crecer tu presencia en el mercado.</p>
+    </div>  
+    <a href="{% url 'marketing:blog' %}">
+        <img src="{% static 'img/marketing.jpg' %}" alt="Marketing">
+    </a>
+</section>
+
+<!-- 4. Presencia web y control de datos -->
+<section class="section">
+    <div class="section-text">
+        <h2>Presencia en Línea y Ciencia de Datos</h2>
+        <p>Una empresa sin presencia digital pierde oportunidades. Creamos páginas web modernas y soluciones de datos para optimizar tus decisiones.</p>
+    </div>
+    <a href="#">
+        <img src="{% static 'img/soluciones_ai.jpg' %}" alt="AI y Web Solutions">
+    </a>
+</section>
+
+<!-- 1. Organización de eventos -->
+<section class="section">
+    <div class="section-text">
+        <h2>Organización Profesional de Eventos</h2>
+        <p>Nos encargamos de planear, coordinar y ejecutar eventos educativos, sociales y científicos con una experiencia integral y profesional.</p>
+    </div>
+    <a href="#">
+        <img src="{% static 'img/organizacion_eventos.jpg' %}" alt="Organización de Eventos">
+    </a>
+</section>
+
+<footer>
+    <p>&copy; 2025 Grupo A&A | Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
+

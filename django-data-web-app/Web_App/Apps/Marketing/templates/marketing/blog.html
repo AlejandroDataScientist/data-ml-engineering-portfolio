@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Marketing y Presencia Digital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #fffdfd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f76c6c;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            color: #f76c6c;
+            margin-top: 40px;
+        }
+
+        a.back {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #f76c6c;
+            font-weight: bold;
+        }
+
+        a.back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Marketing, Presencia Digital y Publicidad Inteligente</h1>
+    </header>
+
+    <div class="content">
+        <h2>La importancia del marketing en la era digital</h2>
+        <p>El marketing ya no es solo una herramienta de venta, sino una forma de conexión auténtica con tu audiencia. En un mundo donde la competencia es constante, tener una estrategia clara y coherente puede hacer toda la diferencia.</p>
+
+        <h2>Presencia en línea</h2>
+        <p>Tu marca debe estar donde está tu público. Tener una página web profesional, redes sociales activas y canales de comunicación eficientes son esenciales para crear confianza y credibilidad.</p>
+
+        <h2>El poder de los datos</h2>
+        <p>La publicidad efectiva se basa en datos reales. Conocer el comportamiento de tus usuarios, sus intereses y hábitos de compra te permite crear campañas más eficientes, ahorrar recursos y obtener mejores resultados.</p>
+
+        <a href="{% url 'home' %}" class="back">← Volver al inicio</a>
+    </div>
+</body>
+</html>
