@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.text import slugify  # si usarás slugs
+from django.utils.text import slugify
 
 class Evento(models.Model):
     nombre = models.CharField(max_length=200)
@@ -16,4 +16,5 @@ class Evento(models.Model):
 
     def __str__(self):
         return self.nombre
+
 
